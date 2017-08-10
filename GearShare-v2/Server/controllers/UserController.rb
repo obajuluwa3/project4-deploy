@@ -7,6 +7,12 @@ class UserController < ApplicationController
     users.to_json
   end
 
+  get '/register/:id' do
+    id = params[:id]
+    user = User.find(id)
+    user.to_json
+  end
+
   get '/:id' do
     id = params[:id]
     user = User.find(id)
@@ -25,6 +31,15 @@ class UserController < ApplicationController
     user.city = request_body["city"]
     user.state = request_body["state"]
     user.token = SecureRandom.hex
+    user.save
+    user.to_json
+  end
+
+  patch '/login/:id' do
+    id = params[:id]
+    user_details = JSON.parse(request.body.read)
+    user = User.find(id)
+    user.update_attributes(user_details)
     user.save
     user.to_json
   end

@@ -11,6 +11,7 @@ CREATE TABLE users (id SERIAL PRIMARY KEY,
 					address VARCHAR(255),
 					city VARCHAR(255),
 					state CHAR(2),
+					zip VARCHAR(255),
 					token VARCHAR(255));
 
 CREATE TABLE equipments (id SERIAL PRIMARY KEY,
