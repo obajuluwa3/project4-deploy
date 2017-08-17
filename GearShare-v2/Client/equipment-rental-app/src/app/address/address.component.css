@@ -1,0 +1,47 @@
+.stateInput {
+	width: 20%;
+	height: 30px;
+	text-indent: 10px;
+	border-radius: 2px;
+	border-width: 0;
+}
+
+.zipInput {
+	width: 50%;
+	height: 30px;
+	margin: 10px 0;
+	margin-left: 10px;
+	text-indent: 10px;
+	border-radius: 2px;
+	border-width: 0;
+}
+
+.navBtn {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 2px;
+  border-width: 0;
+  color: #414042;
+  font-size: 15px;
+  font-weight: 700;
+  background: #feff4e;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 30%;
+  margin: 10px 10px;
+}
+
+.registerBtn {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 2px;
+  border-width: 0;
+  color: #414042;
+  font-size: 15px;
+  font-weight: 700;
+  background: #feff4e;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 70%;
+  margin: 10px 10px;
+}

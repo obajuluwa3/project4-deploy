@@ -1,0 +1,62 @@
+<md-toolbar class="fixed-header">
+	<div (click)="sidenav.open()" class="sideNavMenu"><i class="material-icons md-18">menu</i></div><span>Menu</span>
+	<div class="logoWrapper"><img src="assets/images/logo.svg" class="logo"></div>
+	<div class="lgNav">
+		<div><a routerLink="/list">Equipment Search</a></div>
+		<div><a routerLink="/userlist">Manage My Equipment</a></div>
+		<div><a routerLink="/rentals">My Rentals</a></div>
+		<div><a (click)="logOut()">Log Out</a></div>
+	</div>
+
+</md-toolbar>
+
+<md-sidenav-container class="sideNavWrapper">
+	
+		<md-sidenav #sidenav class="sideNav">
+			<div><a routerLink="/list">Equipment Search</a></div>
+			<div><a routerLink="/userlist">Manage My Equipment</a></div>
+			<div><a routerLink="/rentals">My Rentals</a></div>
+			<div><a (click)="logOut()">Log Out</a></div>
+		</md-sidenav>
+		<div>
+			<div>
+				<h2 align="center">Manage My Gear</h2>
+			</div>
+			<div class="newGear">
+				<a routerLink="/new-equipment" class="viewBtn newBtn">Add New Gear</a>
+			</div>
+			<div  *ngFor="let info of equip_info">
+				<div class="myItem">
+					<div class="gearWrapper">
+						<img src="{{info.equipment.equip_img}}" class="gearImg">
+					</div>
+					<div class="gearDetails">
+						<span class="itemName myItemName">{{info.equipment.model}} {{info.equipment.brand}}<br /> {{info.equipment.equip_type}}</span>
+						<div class="manageBtns">
+							<a (click)="goToEquipment(info)" class="viewBtn editBtn">Edit</a>
+							<a (click)="deleteEquipment(info)" class="viewBtn removeBtn">Remove</a>
+						</div>
+						<div class="statusSwitch">
+						<span class="smallBText status">{{info.rentals[0] != undefined && info.rentals[0].active == true ? "Unavailable" : "Available"}}</span>
+							<label class="switch">
+	  							<input type="checkbox">
+	  							<span class="slider round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!-- <div>
+					<h4>Description</h4>
+					<p>{{info.equipment.description}}</p>
+					<strong>Hourly Rate</strong>
+					<h2>{{info.equipment.hourly_rental_price}}</h2>
+					<strong>24-hr Rate</strong>
+					<h2>{{info.equipment.daily_rental_price}}</h2>
+					<strong>Status:  <span></span></strong><br />
+					<strong>Contact Owner</strong><br />
+					<button>Edit Equipment</button>
+					<button>Remove Equipment</button><br />
+				</div> -->
+			</div>
+		</div>
+</md-sidenav-container>

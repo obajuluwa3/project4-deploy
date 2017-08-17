@@ -1,0 +1,58 @@
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%  !important;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapImg {
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  background: #efefef;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(65, 64, 66, 0.5);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #414042;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rates {
+  text-align: left;
+}
+
+.rates span {
+  margin-right: 5px;
+}

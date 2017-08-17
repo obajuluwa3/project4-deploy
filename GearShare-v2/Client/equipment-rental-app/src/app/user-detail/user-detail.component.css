@@ -1,0 +1,58 @@
+* {
+	// border: 1px solid gray;
+}
+
+.customDiv {
+	margin: 0;
+}
+
+.gearImg {
+	width: 50%;
+}
+
+.imgWrapper {
+	text-align: center;
+}
+
+.editDetails {
+	margin: 0 50px;
+}
+
+.editDetails input {
+	border: 1px solid #efefef;
+	width: 100%;
+	height: 25px;
+	text-indent: 10px;
+}
+
+.editDetails textarea {
+	border: 1px solid #efefef;
+	width: 100%;
+	height: 75px;
+	text-indent: 10px;
+}
+
+.saveBtn {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 2px;
+  border-width: 0;
+  color: #414042;
+  font-size: 15px;
+  font-weight: 700;
+  background: #feff4e;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.saveBtn:hover {
+  background: #ebe250;
+  text-decoration: none;
+}
+
+.btnWrapper {
+	text-align: center;
+	margin-bottom: 20px;
+}

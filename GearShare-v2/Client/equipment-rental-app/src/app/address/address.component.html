@@ -1,0 +1,25 @@
+<div class="introBody">
+	<div class="wrapper">
+		<div class="header">
+			<img id="logo" src='/assets/images/logo.svg' width="150" height="100">
+			<h4 class="title">Enter your address</h4>
+			<p class="subtitle">(This is where your equipment will live)</p>
+		</div>
+		<div class="formBox">
+			<div class="form">
+					<input [(ngModel)]="newUser.address" class="input" placeholder="Address"/><br />
+					<input [(ngModel)]="newUser.city" class="input" placeholder="City"/><br />
+					<div class="leftAlign">
+						<input [(ngModel)]="newUser.state" class="stateInput" placeholder="State"/>
+						<input [(ngModel)]="newUser.zip" class="zipInput" placeholder="Zip code"/><br />
+					</div>
+					<button (click)="addAddress()" class="mainBtn">Create account</button><br /><a routerLink="/register">< back</a>
+			</div>
+			<hr>
+			<div class="footer">
+				<p>Already have an account?</p>
+				<button routerLink="/login" class="footerBtn">Sign in</button>
+			</div>
+		</div>	
+	<div>
+</div>

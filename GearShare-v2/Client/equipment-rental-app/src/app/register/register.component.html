@@ -1,0 +1,22 @@
+<div class="introBody">
+	<div class="wrapper">
+		<div class="header">
+			<img id="logo" src='/assets/images/logo.svg' width="150" height="100">
+			<h4 class="title">Create your account</h4>
+		</div>
+		<div class="formBox">
+			<div class="form">
+					<input [(ngModel)]="newUser.firstname" class="input" placeholder="First Name"/><br />
+					<input [(ngModel)]="newUser.lastname" class="input" placeholder="Last Name"/><br />
+					<input [(ngModel)]="newUser.email" class="input" placeholder="Email"/><br />
+					<input [(ngModel)]="newUser.password" class="input" placeholder="Password" type="password"/><br />
+					<button (click)="register()" class="mainBtn">Next</button><br />
+			</div>
+			<hr>
+			<div class="footer">
+				<p>Already have an account?</p>
+				<button routerLink="/login" class="footerBtn">Sign in</button>
+			</div>
+		</div>
+	<div>
+</div>

@@ -1,0 +1,69 @@
+<md-toolbar class="fixed-header">
+	<div (click)="sidenav.open()" class="sideNavMenu"><i class="material-icons md-18">menu</i></div><span>Menu</span>
+	<div class="logoWrapper"><img src="assets/images/logo.svg" class="logo"></div>
+	<div class="lgNav">
+		<div><a routerLink="/list">Equipment Search</a></div>
+		<div><a routerLink="/userlist">Manage My Equipment</a></div>
+		<div><a routerLink="/rentals">My Rentals</a></div>
+		<div><a (click)="logOut()">Log Out</a></div>
+	</div>
+	<div></div>
+
+</md-toolbar>
+
+<md-sidenav-container class="sideNavWrapper">
+	
+		<md-sidenav #sidenav class="sideNav">
+			<div><a routerLink="/list">Equipment Search</a></div>
+			<div><a routerLink="/userlist">Manage My Equipment</a></div>
+			<div><a routerLink="/rentals">My Rentals</a></div>
+			<div><a (click)="logOut()">Log Out</a></div>
+		</md-sidenav>
+
+		<div>
+    		<div class="searchWrapper">
+				<input [(ngModel)]="search" placeholder="Search equipment near you" class="search">
+				<a (click)="searchEquip()" class="searchBtn"></a>
+			</div>
+		</div>
+
+		<div class="smMap">
+ 			<img src="assets/images/map-img2.jpg" class="mapImg">
+ 		</div>
+
+		<div>
+			<div *ngFor="let info of all_equipments">
+				<!-- <div>
+					<img src="{{info.equipment.equip_img}}" width="200" height="200">
+				</div> -->
+				<div class="gearList">
+					<div class="item">
+						<div class="label">
+							<div class="circle"><span class="itemLabel">A</span></div>
+							<span class="distance smallBText">0.5mi</span>
+						</div>
+						<div class="details">
+							<span class="itemName">{{info.equipment.model}} {{info.equipment.brand}}<br /> {{info.equipment.equip_type}}</span>
+							<div class="rates  smallBText">
+								<span>{{info.equipment.hourly_rental_price | currency:'USD':true:'1.2-2'}} per hour</span>
+								<span>{{info.equipment.daily_rental_price | currency:'USD':true:'1.2-2'}} per day</span>
+							</div>
+						</div>
+						<div class="view">
+							<span class="status smallBText">{{info.rentals[0] != undefined && info.rentals[0].active == true ? "Unavailable" : "Available"}}</span>
+							<a (click)="viewDetail(info)" class="viewBtn" >View</a>
+						</div>
+					</div>
+					<!-- <h4>Description</h4>
+					<p>{{info.equipment.description}}</p> -->
+					<!-- <strong>Hourly Rate</strong><button (click)="createRental(info.equipment.hourly_rental_price, info.equipment.id)">Rent</button> -->
+					<!-- <button (click)="createRental(info.equipment.daily_rental_price, info.equipment.id)">Rent</button><br /> -->
+				</div>
+			</div>
+		</div>
+
+	</md-sidenav-container>
+	<div class="lgMap">
+		<img src="assets/images/map-img3.jpg" class="mapImg">
+	</div>
+

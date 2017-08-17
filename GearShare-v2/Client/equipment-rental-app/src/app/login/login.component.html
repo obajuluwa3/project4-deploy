@@ -1,0 +1,21 @@
+<div class="introBody">
+	<div class="wrapper">
+		<div class="header">
+			<img id="logo" src='/assets/images/logo.svg' width="150" height="100">
+			<h4 class="title">Sign in to your account</h4>
+		</div>
+		<div class="formBox">
+			<div class="form">
+					<input [(ngModel)]="user.username" class="input" placeholder="User Name"/><br />
+					<input [(ngModel)]="user.password" class="input" type="password" placeholder="Password"/><br />
+					<input class="checkbox" type="checkbox" name="remember" value="Remember Me">Remember me<br>
+					<button (click)="login()" class="mainBtn">Sign in</button><br />
+			</div>
+			<hr>
+			<div class="footer">
+				<p>Don't have an account?</p>
+				<button routerLink="/register" class="footerBtn">Create an Account</button>
+			</div>
+		</div>
+	<div>
+</div>

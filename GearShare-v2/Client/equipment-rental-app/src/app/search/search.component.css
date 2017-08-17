@@ -1,0 +1,12 @@
+agm-map {
+  height: 300px;
+}
+
+.searchBody {
+	text-align:center;
+	color: white;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-image: url('/assets/images/map-img.jpg');
+}
