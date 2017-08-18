@@ -5,6 +5,8 @@ CREATE DATABASE equipment_rental;
 \c equipment_rental;
 
 CREATE TABLE users (id SERIAL PRIMARY KEY,
+					first_name VARCHAR,
+					last_name VARCHAR,
 					email VARCHAR(255),
 					username VARCHAR(255), 
 					password_digest VARCHAR(255),
