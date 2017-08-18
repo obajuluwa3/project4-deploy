@@ -32,7 +32,7 @@ class Equipment {
   styleUrls: ['./userlist.component.css']
 })
 export class UserlistComponent {
-
+	check: boolean = false;
 	equip_info: Equipment[] = [];
   	constructor(private http: Http, private router: Router) {
 	  	this.getEquipments();
@@ -40,7 +40,8 @@ export class UserlistComponent {
 
   	getEquipments(){
 	  	this.http.get('http://localhost:9393/equipments/userlist?token=' + window.localStorage.token).subscribe(response => {
-	      this.equip_info = response.json()
+	      this.equip_info = response.json(),
+	      this.check = this.equip_info[0].equip_available
 	      }, err => {
 	      if(err.status === 403){
 	        this.router.navigate(['/login'])
@@ -53,6 +54,13 @@ export class UserlistComponent {
 	logOut(){
 	    window.localStorage.clear();
 	    this.router.navigate(['/login'])
+  	}
+
+  	checkAll(info, val) {
+  		this.http.patch('http://localhost:9393/equipments/toggle/' + info.equipment.id + '?token=' + window.localStorage.token, {"available":val}).subscribe(response =>
+      	this.equip_info = response.json()
+    	)
+  		console.log(this.equip_info);
   	}
 
   goToEquipment(info){

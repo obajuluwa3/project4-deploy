@@ -37,9 +37,9 @@
 							<a (click)="deleteEquipment(info)" class="viewBtn removeBtn">Remove</a>
 						</div>
 						<div class="statusSwitch">
-						<span class="smallBText status">{{info.rentals[0] != undefined && info.rentals[0].active == true ? "Unavailable" : "Available"}}</span>
+						<span class="smallBText status">{{info.equipment.available == false ? "Unavailable" : "Available"}}</span>
 							<label class="switch">
-	  							<input type="checkbox">
+	  							<input type="checkbox" [(ngModel)]="check" (change)="checkAll(info, check)">
 	  							<span class="slider round"></span>
 							</label>
 						</div>
