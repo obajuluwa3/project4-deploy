@@ -18,7 +18,7 @@
 			<div><a routerLink="/rentals">My Rentals</a></div>
 			<div><a (click)="logOut()">Log Out</a></div>
 		</md-sidenav>
-		<div>
+		<div class="detailWrapper">
 			<h2>Edit Gear</h2>
 			<div class="imgWrapper">
 				<img src="{{equipment.equip_img}}" class="gearImg">
@@ -37,7 +37,7 @@
 			<div class="btnWrapper">
 				<a (click)="patchEquipment()" class="saveBtn">Save Changes</a>
 			</div>
-			<div class="btnWrapper">
+			<div class="btnWrapper goBack">
 				<a routerLink="/userlist">cancel</a>
 			</div>
 		</div>

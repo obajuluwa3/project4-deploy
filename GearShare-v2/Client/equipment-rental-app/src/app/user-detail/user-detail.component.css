@@ -2,32 +2,26 @@
 	// border: 1px solid gray;
 }
 
-.customDiv {
-	margin: 0;
+.detailWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .gearImg {
-	width: 50%;
-}
-
-.imgWrapper {
-	text-align: center;
-}
-
-.editDetails {
-	margin: 0 50px;
+	width: 250px;
 }
 
 .editDetails input {
 	border: 1px solid #efefef;
-	width: 100%;
+	width: 300px;
 	height: 25px;
 	text-indent: 10px;
 }
 
 .editDetails textarea {
 	border: 1px solid #efefef;
-	width: 100%;
+	width: 300px;
 	height: 75px;
 	text-indent: 10px;
 }
@@ -41,7 +35,7 @@
   font-size: 15px;
   font-weight: 700;
   background: #feff4e;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 100px 10px;
   text-decoration: none;
   width: 100%;
   margin: 10px 0;
@@ -52,7 +46,57 @@
   text-decoration: none;
 }
 
-.btnWrapper {
-	text-align: center;
-	margin-bottom: 20px;
+@media only screen and (max-width: 640px) {
+
+	.gearImg {
+		width: 90%;
+	}
+
+	.imgWrapper {
+		text-align: center;
+	}
+
+	.btnWrapper {
+		text-align: center;
+		margin-bottom: 20px;
+		width: 90%;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	.editDetails {
+		margin: 0 50px;
+		width: 90%;
+	}
+
+	.editDetails input {
+		border: 1px solid #efefef;
+		width: 100%;
+		height: 25px;
+		text-indent: 10px;
+	}
+
+	.editDetails textarea {
+		border: 1px solid #efefef;
+		width: 100%;
+		height: 75px;
+		text-indent: 10px;
+	}
+
+	.saveBtn {
+	  -webkit-border-radius: 4;
+	  -moz-border-radius: 4;
+	  border-radius: 2px;
+	  border-width: 0;
+	  color: #414042;
+	  font-size: 15px;
+	  font-weight: 700;
+	  background: #feff4e;
+	  padding: 10px 30% 10px;
+	  text-decoration: none;
+	  margin: 10px 0;
+	}
+
 }

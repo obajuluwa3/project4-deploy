@@ -34,6 +34,7 @@ class Rental {
   templateUrl: './rentals.component.html',
   styleUrls: ['./rentals.component.css']
 })
+
 export class RentalsComponent {
 	rental_info: Rental[] = [];
 	constructor(private http: Http, private router: Router) { 

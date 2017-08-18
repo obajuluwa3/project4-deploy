@@ -10,8 +10,9 @@
 
 </md-toolbar>
 
-<md-sidenav-container class="sideNavWrapper">
-	
+<div class="container">
+	<md-sidenav-container class="sideNavWrapper">
+		
 		<md-sidenav #sidenav class="sideNav">
 			<div><a routerLink="/list">Equipment Search</a></div>
 			<div><a routerLink="/userlist">Manage My Equipment</a></div>
@@ -20,15 +21,15 @@
 		</md-sidenav>
 
 		<div>
-    		<div class="searchWrapper">
+			<div class="searchWrapper">
 				<input [(ngModel)]="search" placeholder="Search equipment near you" class="search">
 				<a (click)="searchEquip()" class="searchBtn"></a>
 			</div>
 		</div>
 
 		<div class="smMap">
- 			<img src="assets/images/map-img2.jpg" class="mapImg">
- 		</div>
+				<img src="assets/images/map-img2.jpg" class="mapImg">
+			</div>
 
 		<div>
 			<div *ngFor="let info of all_equipments">
@@ -62,7 +63,8 @@
 		</div>
 
 	</md-sidenav-container>
+		
 	<div class="lgMap">
 		<img src="assets/images/map-img3.jpg" class="mapImg">
 	</div>
-
+</div>

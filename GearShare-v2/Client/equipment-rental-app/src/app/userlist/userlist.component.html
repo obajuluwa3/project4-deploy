@@ -10,7 +10,7 @@
 
 </md-toolbar>
 
-<md-sidenav-container class="sideNavWrapper">
+<md-sidenav-container class="listWrapper">
 	
 		<md-sidenav #sidenav class="sideNav">
 			<div><a routerLink="/list">Equipment Search</a></div>
@@ -18,8 +18,8 @@
 			<div><a routerLink="/rentals">My Rentals</a></div>
 			<div><a (click)="logOut()">Log Out</a></div>
 		</md-sidenav>
-		<div>
-			<div>
+		<div class="listContainer">
+			<div class="listTitle">
 				<h2 align="center">Manage My Gear</h2>
 			</div>
 			<div class="newGear">

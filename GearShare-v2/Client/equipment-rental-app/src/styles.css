@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-/*======== Styles for angular theme =========*/
-
 * {
   // border: 1px solid grey;
+}
+
+.mat-sidenav-container {
+  background-color: #fff;
 }
 
 .mat-toolbar {
@@ -21,12 +23,13 @@
 .sideNav {
   padding: 20px;
   background-color: #414042;
-  color: #fff;
+  color: #feff4e;
 }
 
 .sideNav a {
   text-decoration: none;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .sideNav div {
@@ -44,6 +47,7 @@ md-sidenav-container {
 
 .navWrapper {
   margin-top: 0;
+  height: 100vh;
 }
 
 /*======== Global Styles =========*/
@@ -67,7 +71,9 @@ md-sidenav-container {
   margin: 0 auto;
   width: 400px;
   height: 100vh;
-  padding-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .formBox {
@@ -95,7 +101,7 @@ md-sidenav-container {
 
 .header {
   width: 80%;
-  margin: 50px auto 0;
+  margin: 0 auto;
 }
 
 .footer {
@@ -170,8 +176,60 @@ hr {
   text-align:left;
 }
 
+/*============= main pages ==============*/
+
+.smallBText {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.details {
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.itemName {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.view {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 70px;
+}
+
+.viewBtn {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 2px;
+  border-width: 1px;
+  color: #414042;
+  border-color: #414042;
+  font-size: 15px;
+  font-weight: 700;
+  background: #feff4e;
+  padding: 7px;
+  text-decoration: none;
+  width: 85%;
+  margin: 5px;
+  text-align: center;
+}
+
+.viewBtn:hover {
+  background: #ebe250;
+  text-decoration: none;
+}
+
 .sideNavWrapper {
   height: 100vh;
+  width: 300px !important;
+  border-right: 1px solid #86b0b7;
 }
 
 .md-18 {
@@ -180,6 +238,11 @@ hr {
 
 .smMap {
   display: none;
+}
+
+.lgMap {
+  position: fixed;
+  height: 100vh;
 }
 
 .fixed-header span {
@@ -193,21 +256,22 @@ hr {
 }
 
 .lgNav {
-  width: 70%;
+  width: 90%;
   text-align: right;
 }
 
 .lgNav div {
   display: inline;
   padding: 0 10px;
-  border-left: 1px solid white;
+  border-left: 1px solid #feff4e;
 }
 
 .lgNav div a {
-  color: white;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-decoration: none;
   font-size: 12px;
-  text-transform: uppercase;
 }
 
 .lgNav div:nth-child(1) {
@@ -223,7 +287,125 @@ hr {
   width: 90px;
 }
 
+.search {
+    width: 100%;
+    height: 30px;
+    text-indent: 10px;
+    border-radius: 2px;
+    border-width: 0;
+  }
+
+  .searchWrapper {
+    width: 90%;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: 40px auto 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .searchBtn {
+    background-image: url('/assets/images/search.svg');
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-color: #414042;
+    width: 50px;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .goBack {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .goBack a {
+    text-decoration: none;
+    color: #414042;
+  }
+
+  .goBack a:hover {
+    font-weight: bold;
+  }
+
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
 @media only screen and (max-width: 640px) {
+
+  .sideNavMenu {
+    color: #feff4e;
+  }
+
+  .container {
+    display: block;
+  }
+
+  .sideNavWrapper {
+  height: 100vh;
+  width: 100% !important;
+  }
 
   .lgMap {
     display: none;
@@ -292,119 +474,8 @@ hr {
     width: 60%;
   }
 
-  .logoWrapper2 {
-    display: none;
-  }
-
   .logo {
     width: 60px;
-  }
-
-  .smallBText {
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .details {
-    margin-right: 12px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .itemName {
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  .view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  }
-
-  .viewBtn {
-    -webkit-border-radius: 4;
-    -moz-border-radius: 4;
-    border-radius: 2px;
-    border-width: 1px;
-    color: #414042;
-    border-color: #414042;
-    font-size: 15px;
-    font-weight: 700;
-    background: #feff4e;
-    padding: 7px;
-    text-decoration: none;
-    width: 85%;
-    margin: 5px;
-    text-align: center;
-  }
-
-  .viewBtn:hover {
-    background: #ebe250;
-    text-decoration: none;
-  }
-
-  /* The switch - the box around the slider */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-
-  /* Hide default HTML checkbox */
-  .switch input {display:none;}
-
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
   }
 
 }
@@ -423,10 +494,8 @@ hr {
   }
 
   .wrapper {
-  	margin: 0 auto;
   	width: 90%;
     height: 100vh;
-    padding-top: 25px;
   }
 
   .formBox {
@@ -443,7 +512,6 @@ hr {
 
   .header {
     width: 100%;
-    margin: 50px auto 0;
   }
 
   .footer {

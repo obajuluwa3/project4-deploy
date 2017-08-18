@@ -19,26 +19,27 @@
 			<div><a (click)="logOut()">Log Out</a></div>
 		</md-sidenav>
 
-		<div class="example-sidenav-content">
-			<a routerLink="/list">< Back to Gear Search</a>
-		</div>
+		
 		<div class="item">
-			<h2>{{equipment.model}} {{equipment.brand}} {{equipment.equip_type}}</h2>
+			<h2>{{equipment.model}} {{equipment.brand}}<br />{{equipment.equip_type}}</h2>
 			<div class="imgWrapper">
 				<img class="gearImg" src="{{equipment.equip_img}}" width="300" height="300">
 			</div>
 			<div class="rent">
 				<div class="btnWrapper">
-					<a (click)="createRental(equipment.hourly_rental_price, equipment.id)" class="rentBtn">Rent Hourly ({{equipment.hourly_rental_price | currency:'USD':true:'1.2-2'}})</a><br />
+					<a (click)="createRental(equipment.hourly_rental_price, equipment.id)" class="rentBtn">Rent Hourly ({{equipment.hourly_rental_price | currency:'USD':true:'1.2-2'}})</a>
 				</div>
 				<div class="btnWrapper">
 					<a (click)="createRental(equipment.daily_rental_price, equipment.id)" class="rentBtn">Rent Daily ({{equipment.daily_rental_price | currency:'USD':true:'1.2-2'}})</a>
 				</div>
 			</div>
-			<div>
+			<div class="itemDescription">
 				<h4>Description</h4>
 				<p>{{equipment.description}}</p>
 			</div>
+		</div>
+		<div class="goBack">
+			<a routerLink="/list">< Back to Gear Search</a>
 		</div>
 
 </md-sidenav-container>
